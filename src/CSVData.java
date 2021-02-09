@@ -29,8 +29,7 @@ public class CSVData implements DataInterface {
     }
 
     @Override
-    public void createEntry() {
-        // TODO Auto-generated method stub
+    public void createEntry(Entry e) {
 
     }
 

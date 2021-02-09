@@ -1,14 +1,32 @@
-class SQLData implements DataInterface{
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+class SQLData implements DataInterface {
 
     String connectionString = "";
     String username = "";
     String password = "";
+    Connection con;
+    java.sql.Statement st;
+    ResultSet rs;
 
     @Override
     public void initializeDatabase(String filename) {
         parseString(filename);
+        try {
+            con = DriverManager.getConnection(connectionString,username, password);
+            st =  con.createStatement();
+            rs = st.executeQuery("SELECT VERSION()");
+            if(rs.next()){
+                System.out.println("Connected to..." + rs.getString(1));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        
     }
-
 
 
     private void parseString(String s){
@@ -31,11 +49,10 @@ class SQLData implements DataInterface{
         password = information[2];
     }
 
-
     @Override
-    public void createEntry() {
+    public void createEntry(Entry e) {
         // TODO Auto-generated method stub
-
+        
     }
 
     @Override
