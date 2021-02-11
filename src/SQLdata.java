@@ -3,6 +3,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.mysql.jdbc.Statement;
+
 class SQLData implements DataInterface {
 
     String connectionString = "";
@@ -51,13 +53,30 @@ class SQLData implements DataInterface {
 
     @Override
     public void createEntry(Entry e) {
-        // TODO Auto-generated method stub
+        String statement="INSERT INTO DataEntries(productID,supplierID,stockQuantity,WholesaleCost,salePrice) VALUES('" + e.getProductID() + "', '" + e.getSupplierID() + "' , '"+ e.getStockQuantity() + "' , '" + e.getWholesaleCost() + "' , '" + e.getSalePrice() + "');" ;
+        try {
+            st.execute(statement);
+            
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        
         
     }
 
     @Override
-    public void readEntry() {
-        // TODO Auto-generated method stub
+    public Entry readEntry(String ID) {
+        String statement = "SELECT * FROM DataEntries HAVING productID ='"+ ID + "';";
+        try {
+            rs = st.executeQuery(statement);
+            Entry ent;
+            rs.next();
+            System.out.println(rs.getString("productID"));
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+
 
     }
 

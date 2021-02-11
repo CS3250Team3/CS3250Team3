@@ -34,7 +34,8 @@ public class CSVData implements DataInterface {
     }
 
     @Override
-    public void readEntry() {
+    public Entry readEntry(String ID) {
+        return null;
         // TODO Auto-generated method stub
 
     }
