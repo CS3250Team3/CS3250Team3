@@ -69,7 +69,6 @@ class SQLData implements DataInterface {
         String statement = "SELECT * FROM DataEntries HAVING productID ='"+ ID + "';";
         try {
             rs = st.executeQuery(statement);
-            Entry ent;
             rs.next();
             System.out.println(rs.getString("productID"));
         } catch (SQLException e) {
@@ -81,20 +80,26 @@ class SQLData implements DataInterface {
     }
 
     @Override
-    public void updateEntry() {
-        // TODO Auto-generated method stub
+    public void updateEntry(String ID, Entry e) {
+        deleteEntry(ID);
+        createEntry(e);
+       
 
     }
 
     @Override
-    public void deleteEntry() {
-        // TODO Auto-generated method stub
-
+    public void deleteEntry(String ID) {
+        String statement = "DELETE FROM DataEntries HAVING productID ='"+ ID + "';";
+        try {
+            st.execute(statement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
-    public void saveEntry() {
-        // TODO Auto-generated method stub
+    public void saveEntry(Entry e) {
+        createEntry(e);
 
     }
 
