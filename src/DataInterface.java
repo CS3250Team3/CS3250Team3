@@ -5,4 +5,5 @@ public interface DataInterface {
     void updateEntry(String ID, Entry e);
     void deleteEntry(String ID);
     void saveEntry(Entry e);
+    int retSize();
 }

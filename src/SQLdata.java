@@ -3,7 +3,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import com.mysql.jdbc.Statement;
 
 class SQLData implements DataInterface {
 
@@ -101,6 +100,12 @@ class SQLData implements DataInterface {
     public void saveEntry(Entry e) {
         createEntry(e);
 
+    }
+
+    @Override
+    public int retSize() {
+        // TODO Auto-generated method stub
+        return 0;
     }
 
 
