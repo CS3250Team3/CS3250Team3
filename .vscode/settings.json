@@ -1,7 +1,0 @@
-{
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "/home/james/Downloads/junit-platform-console-standalone-1.6.0.jar",
-        "/home/james/Downloads/mysql-connector-java-5.1.49-bin.jar"
-    ]
-}
