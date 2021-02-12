@@ -41,19 +41,19 @@ public class CSVData implements DataInterface {
     }
 
     @Override
-    public void updateEntry() {
+    public void updateEntry(String ID, Entry e) {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public void deleteEntry() {
+    public void deleteEntry(String ID) {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public void saveEntry() {
+    public void saveEntry(Entry e) {
         // TODO Auto-generated method stub
 
     }

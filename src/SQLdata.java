@@ -89,7 +89,7 @@ class SQLData implements DataInterface {
 
     @Override
     public void deleteEntry(String ID) {
-        String statement = "DELETE FROM DataEntries HAVING productID ='"+ ID + "';";
+        String statement = "DELETE FROM DataEntries WHERE productID ='"+ ID + "';";
         try {
             st.execute(statement);
         } catch (SQLException e) {
