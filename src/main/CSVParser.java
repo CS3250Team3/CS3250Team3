@@ -45,10 +45,6 @@ public class CSVParser {
 			    	
 			    	// Add the entry to the result map
 			    	results.put(fields[0], newEntry);
-			    	
-			    	// Output current row and product to console
-			    	System.out.print("Adding object " + i + ": " 
-			    					+ results.get(fields[0]).getProductID() + "\n");
 			    	i++;
 			    }
 		} catch (IOException e) {

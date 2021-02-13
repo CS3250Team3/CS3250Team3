@@ -1,6 +1,8 @@
 package main;
+
 import java.util.HashMap;
 import java.util.Vector;
+
 public class CSVData implements DataInterface {
     /*  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         this is where we need to create our methods
@@ -12,7 +14,9 @@ public class CSVData implements DataInterface {
 
     private Vector<Entry>  Data = new Vector<Entry>();
     private int NumEntries;
+    private HashMap<String, Entry> initialData = new HashMap<String, Entry>();
     
+
 
     @Override
     public void initializeDatabase(String filename) {
@@ -26,36 +30,43 @@ public class CSVData implements DataInterface {
        
         // Track how many entries were added
         this.NumEntries = initialData.size();
+        this.initialData = initialData;
     }
 
     @Override
-    public void createEntry() {
+    public void createEntry(Entry e) {
+        // TODO Auto-generated method stub
+            
+    }
+
+    @Override
+    public Entry readEntry(String ID) {
+        // TODO Auto-generated method stub
+        return null;
+
+    }
+
+    @Override
+    public void updateEntry(String ID, Entry e) {
         // TODO Auto-generated method stub
 
     }
 
     @Override
-    public void readEntry() {
-        // TODO Auto-generated method stub
-
+    public void deleteEntry(String id) {
+        // deletes entry using id provided
+        initialData.remove(id);
     }
 
     @Override
-    public void updateEntry() {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void deleteEntry() {
-        // TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void saveEntry() {
+    public void saveEntry(Entry e) {
         // TODO Auto-generated method stub
 
     }
     
+    @Override
+    public int retSize() {
+        // returns size of HashMap to test delete function
+        return initialData.size();
+    }
 }
