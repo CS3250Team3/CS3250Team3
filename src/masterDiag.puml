@@ -1,0 +1,68 @@
+
+
+@startuml 
+class Main
+ 
+
+
+
+
+
+
+abstract class CSV_Parser{
+    
+}
+
+
+
+ interface public_Data_Interface  {
+
+    void initializeDatabase(String filename)
+    void createEntry()
+    void readEntry()
+    void updateEntry()
+    void deleteEntry()
+    void saveEntry() 
+  
+ }
+
+
+
+
+abstract class "Entry"{
+    -productID
+    -suplierID
+    -stockQuantity
+    -wholesaleCost
+    -salePrice
+}
+
+
+
+Methods : getProductID()
+Methods : setProductID(string productID)
+Methods : getSupplierID()
+Methods : setSupplierID(String supplierID)
+Methods : getStockQuantity()
+Methods : setStockQuantity(int stockQuantity)
+Methods : getWholesaleCost()
+Methods : setWholesaleCost(double wholesaleCost)
+Methods : getSalePrice()
+Methods : setSalePrice(double salePrice)
+
+
+class CSVData
+CSVData <|-- createEntry
+CSVData <|-- readEntry
+CSVData <|-- updateEntry
+CSVData <|-- deleteEntry
+CSVData <|-- saveEntry
+   
+
+
+Entry --|> Main
+CSV_Parser --|> Methods
+public_Data_Interface <|-- Methods
+public_Data_Interface --|> Entry
+CSVData -- public_Data_Interface
+@enduml
