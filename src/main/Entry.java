@@ -1,3 +1,5 @@
+package main;
+
 public class Entry {
     private String productID;
     private String supplierID;

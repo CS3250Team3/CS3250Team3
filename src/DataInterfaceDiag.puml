@@ -1,0 +1,14 @@
+@startuml
+ interface " public Data Interface"{
+     void initializeDatabase(String filename)
+    void createEntry()
+    void readEntry()
+    void updateEntry()
+    void deleteEntry()
+    void saveEntry() 
+ }
+    
+     
+
+
+@enduml

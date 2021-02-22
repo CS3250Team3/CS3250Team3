@@ -1,0 +1,18 @@
+@startuml
+
+CSVData <|-- createEntry
+CSVData <|-- readEntry
+CSVData <|-- updateEntry
+CSVData <|-- deleteEntry
+CSVData <|-- saveEntry
+   
+
+
+
+
+ 
+
+
+
+
+@enduml

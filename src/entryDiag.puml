@@ -1,0 +1,22 @@
+@startuml
+abstract class "Entry"{
+    -productID
+    -suplierID
+    -stockQuantity
+    -wholesaleCost
+    -salePrice
+}
+
+
+Entry <|-- Methods
+Methods : getProductID()
+Methods : setProductID(string productID)
+Methods : getSupplierID()
+Methods : setSupplierID(String supplierID)
+Methods : getStockQuantity()
+Methods : setStockQuantity(int stockQuantity)
+Methods : getWholesaleCost()
+Methods : setWholesaleCost(double wholesaleCost)
+Methods : getSalePrice()
+Methods : setSalePrice(double salePrice)
+@enduml
