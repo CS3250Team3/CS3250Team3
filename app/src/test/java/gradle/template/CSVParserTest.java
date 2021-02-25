@@ -1,4 +1,4 @@
-package Junit;
+package gradle.template;
 
 import static org.junit.jupiter.api.Assertions.*;
 

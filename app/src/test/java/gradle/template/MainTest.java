@@ -1,14 +1,18 @@
-package Junit;
+package gradle.template;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import org.junit.Test;
+import java.io.File;
+import java.io.IOException;
 
+import org.junit.jupiter.api.Test;
 
 public class MainTest {
 
    @Test
    public void testAdd() {
       String str = "JUnit is working fine";
-      assertEquals("JUnit is working fine",str);
+      assertEquals("JUnit is working fine", str);
+
    }
 }
